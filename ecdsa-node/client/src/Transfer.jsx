@@ -14,13 +14,12 @@ function Transfer({ setBalance }) {
     evt.preventDefault();
 
     try {
-      // Derive Public Key from Private Key
       const derivedPublicKey = toHex(secp.getPublicKey(privateKey));
 
       const {
         data: { balance },
       } = await server.post(`send`, {
-        sender: derivedPublicKey, // Send the public key instead of address
+        sender: derivedPublicKey,
         amount: parseInt(sendAmount),
         recipient,
       });
