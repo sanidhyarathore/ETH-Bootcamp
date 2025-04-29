@@ -3,7 +3,7 @@ async function main() {
   const counter = await Counter.deploy();
 
   //await counter.deployed();
-  console.log(`Counter deployed to ${counter.address}`)
+  console.log(`Counter deployed to ${counter.target}`)
 }
 
 main().catch((err) => {
